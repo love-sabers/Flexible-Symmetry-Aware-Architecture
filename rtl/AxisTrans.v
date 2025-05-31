@@ -1,4 +1,4 @@
-module Pre #(
+module AxisTrans #(
     parameter M = 4,                     // 输入整数位，最高位为符号位
     parameter N = 8,                      // 输入小数位
     parameter FUNC_TYPE = 0             // 0/1，选择功能类型(+,-)
