@@ -1,4 +1,4 @@
-module pwl_eval #(
+module pwl #(
     parameter M = 4,                     // 输入整数位
     parameter N = 8,                     // 输入小数位
     parameter U = 8,                     // 查表索引位宽（使用输入高 U 位）
