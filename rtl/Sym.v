@@ -1,7 +1,7 @@
 module Sym #(
     parameter M = 4,                     // 输入整数位，最高位为符号位
     parameter N = 8,                     // 输入小数位
-    parameter FUNC_TYPE = 0             // 0/1/2，选择功能类型
+    parameter FUNC_TYPE = 0             // 0/1/2，选择功能类型(0,1,x)
 )(
     input wire clk,
     input wire signed [M+N-1:0] x_in,    // 输入定点数（signed）
