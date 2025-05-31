@@ -1,4 +1,4 @@
-module pwl #(
+module Pre #(
     parameter M = 4,                     // 输入整数位，最高位为符号位
     parameter N = 8                      // 输入小数位
 )(
