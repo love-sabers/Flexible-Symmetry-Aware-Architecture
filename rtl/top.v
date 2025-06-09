@@ -1,11 +1,11 @@
 module top #(//include the adder
-    parameter M = 4,                     // 杈撳叆鏁存暟浣嶏紝鏈?楂樹綅涓虹鍙蜂綅
-    parameter N = 8,                      // 杈撳叆灏忔暟浣?
-    parameter FUNC_TYPE = 4             // 閫夋嫨鍑芥暟绫诲瀷(Sigmoid,Tanh,Swish,GELU,Softplos)
+    parameter M = 4,                     // 输入整数位，最高位为符号位
+    parameter N = 8,                      // 输入小数
+    parameter FUNC_TYPE = 4             // 选择函数类型(Sigmoid,Tanh,Swish,GELU,Softplos)
 )(
     input wire clk,
-    input wire signed [M+N-1:0] x_in,    // 杈撳叆瀹氱偣鏁帮紙signed锛?
-    output wire signed [M+N-1:0] f_out    // 杈撳嚭瀹氱偣鏁?
+    input wire signed [M+N-1:0] x_in,    // 输入定点数（signed）
+    output wire signed [M+N-1:0] f_out    // 输出定点数
 );
 
 
@@ -18,20 +18,20 @@ Pre #(
 )pre_inst(
     .clk(clk),
     .x_in(x_in),
-    .sign(sign),                     // 杈撳嚭绗﹀彿浣?
-    .x_abs(x_abs)    // 杈撳嚭瀹氱偣鏁扮殑缁濆鍊?
+    .sign(sign),                     // 输出符号
+    .x_abs(x_abs)    // 输出定点数的绝对值
 );
 
 wire [M+N-1:0] s_out;
 Sym #(
     .M(M),
     .N(N),
-    .FUNC_TYPE(FUNC_TYPE)             // 0/1/2锛岄?夋嫨鍔熻兘绫诲瀷(0,1,x)
+    .FUNC_TYPE(FUNC_TYPE)             // 0/1/2，选择功能类型(0,1,x)
 )sym_inst(
     .clk(clk),
     .x_in(x_in),
-    .sign(sign),                     // 杈撳叆绗﹀彿浣?
-    .s_out(s_out)    // 杈撳嚭瀹氱偣鏁帮紙缁濆鍊兼垨鍏朵粬锛?
+    .sign(sign),                     // 输入符号
+    .s_out(s_out)    // 输出定点数（绝对值或其他）
 );
 
 wire [M+N-1:0] y_out;
@@ -53,12 +53,12 @@ PWL #(
 AxisTrans #(
     .M(M),
     .N(N),
-    .FUNC_TYPE(FUNC_TYPE)             //閫夋嫨鍔熻兘绫诲瀷(-,+)
+    .FUNC_TYPE(FUNC_TYPE)             //选择功能类型(-,+)
 )at_inst(
     .clk(clk),
     .f_in(y_out),
     .s_in(s_out),
-    .f_out(f_out)    // 杈撳嚭瀹氱偣鏁帮紙缁濆鍊兼垨鍏朵粬锛?
+    .f_out(f_out)    // 输出定点数
 );
 
 endmodule

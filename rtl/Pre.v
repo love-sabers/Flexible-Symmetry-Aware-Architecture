@@ -1,16 +1,16 @@
 module Pre #(
-    parameter M = 4,                     // è¾“å…¥æ•´æ•°ä½ï¼Œæœ€é«˜ä½ä¸ºç¬¦å·ä½
-    parameter N = 8                      // è¾“å…¥å°æ•°ä½
+    parameter M = 4,                     // ÊäÈëÕûÊıÎ»£¬×î¸ßÎ»Îª·ûºÅÎ»
+    parameter N = 8                      // ÊäÈëĞ¡ÊıÎ»
 )(
     input wire clk,
-    input wire signed [M+N-1:0] x_in,    // è¾“å…¥å®šç‚¹æ•°ï¼ˆsignedï¼‰
-    output reg sign,                     // è¾“å‡ºç¬¦å·ä½
-    output reg signed [M+N-1:0] x_abs    // è¾“å‡ºå®šç‚¹æ•°çš„ç»å¯¹å€¼
+    input wire signed [M+N-1:0] x_in,    // ÊäÈë¶¨µãÊı£¨signed£©
+    output reg sign,                     // Êä³ö·ûºÅÎ»
+    output reg signed [M+N-1:0] x_abs    // Êä³ö¶¨µãÊıµÄ¾ø¶ÔÖµ
 );
 
 always @(posedge clk) begin
-    sign <= x_in[M+N-1];                 // è®°å½•ç¬¦å·ä½
-    x_abs <= (x_in < 0) ? -x_in : x_in;  // è®¡ç®—ç»å¯¹å€¼
+    sign <= x_in[M+N-1];                 // ¼ÇÂ¼·ûºÅÎ»
+    x_abs <= (x_in < 0) ? -x_in : x_in;  // ¼ÆËã¾ø¶ÔÖµ
 end
 
 endmodule

@@ -1,12 +1,12 @@
 module Sym #(
-    parameter M = 4,                     // è¾“å…¥æ•´æ•°ä½ï¼Œæœ€é«˜ä½ä¸ºç¬¦å·ä½
-    parameter N = 8,                     // è¾“å…¥å°æ•°ä½
-    parameter FUNC_TYPE = 0             // 0/1/2ï¼Œé€‰æ‹©åŠŸèƒ½ç±»å‹(0,1,x)
+    parameter M = 4,                     // ÊäÈëÕûÊıÎ»£¬×î¸ßÎ»Îª·ûºÅÎ»
+    parameter N = 8,                     // ÊäÈëĞ¡ÊıÎ»
+    parameter FUNC_TYPE = 0             // 0/1/2£¬Ñ¡Ôñ¹¦ÄÜÀàĞÍ(0,1,x)
 )(
     input wire clk,
-    input wire signed [M+N-1:0] x_in,    // è¾“å…¥å®šç‚¹æ•°ï¼ˆsignedï¼‰
-    input wire sign,                     // è¾“å…¥ç¬¦å·ä½
-    output reg signed [M+N-1:0] s_out    // è¾“å‡ºå®šç‚¹æ•°ï¼ˆç»å¯¹å€¼æˆ–å…¶ä»–ï¼‰
+    input wire signed [M+N-1:0] x_in,    // ÊäÈë¶¨µãÊı£¨signed£©
+    input wire sign,                     // ÊäÈë·ûºÅÎ»
+    output reg signed [M+N-1:0] s_out    // Êä³ö¶¨µãÊı£¨¾ø¶ÔÖµ»òÆäËû£©
 );
 
 always @(posedge clk) begin

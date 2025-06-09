@@ -1,35 +1,35 @@
-module pwl #(
-    parameter M = 4,                     // è¾“å…¥æ•´æ•°ä½
-    parameter N = 8,                     // è¾“å…¥å°æ•°ä½
-    parameter U = 8,                     // æŸ¥è¡¨ç´¢å¼•ä½å®½ï¼ˆä½¿ç”¨è¾“å…¥é«˜ U ä½ï¼‰
-    parameter V = 4,                     // åˆ†æ®µå†…å°æ•°å‚ä¸Žä½å®½ï¼ˆä½¿ç”¨è¾“å…¥ä½Ž V ä½ï¼‰
-    parameter K_WIDTH_I = 4,             // k æ•´æ•°ä½å®½
-    parameter K_WIDTH_F = 12,            // k å°æ•°ä½å®½
-    parameter B_WIDTH_I = 4,             // b æ•´æ•°ä½å®½
-    parameter B_WIDTH_F = 12             // b å°æ•°ä½å®½
+module PWL #(
+    parameter M = 4,                     // ÊäÈëÕûÊýÎ»
+    parameter N = 8,                     // ÊäÈëÐ¡ÊýÎ»
+    parameter U = 8,                     // ²é±íË÷ÒýÎ»¿í£¨Ê¹ÓÃÊäÈë¸ß U Î»£©
+    parameter V = 4,                     // ·Ö¶ÎÄÚÐ¡Êý²ÎÓëÎ»¿í£¨Ê¹ÓÃÊäÈëµÍ V Î»£©
+    parameter K_WIDTH_I = 4,             // k ÕûÊýÎ»¿í
+    parameter K_WIDTH_F = 12,            // k Ð¡ÊýÎ»¿í
+    parameter B_WIDTH_I = 4,             // b ÕûÊýÎ»¿í
+    parameter B_WIDTH_F = 12             // b Ð¡ÊýÎ»¿í
 )(
     input wire clk,
-    input wire signed [M+N-1:0] x_in,   // è¾“å…¥å®šç‚¹æ•°ï¼ˆsignedï¼‰
-    output reg signed [M+N-1:0] y_out   // è¾“å‡ºå®šç‚¹æ•°ï¼ˆè£å‰ªï¼‰
+    input wire signed [M+N-1:0] x_in,   // ÊäÈë¶¨µãÊý£¨signed£©
+    output reg signed [M+N-1:0] y_out   // Êä³ö¶¨µãÊý£¨²Ã¼ô£©
 );
 
     localparam K_WIDTH = K_WIDTH_I + K_WIDTH_F;
     localparam B_WIDTH = B_WIDTH_I + B_WIDTH_F;
-    localparam Y_FULL_WIDTH = K_WIDTH + V + 1; // k_frac ä¸´æ—¶ç»“æžœä½å®½ï¼Œ+1 é˜²æº¢å‡º
+    localparam Y_FULL_WIDTH = K_WIDTH + V + 1; // k_frac ÁÙÊ±½á¹ûÎ»¿í£¬+1 ·ÀÒç³ö
     localparam Y_TOTAL_WIDTH = (Y_FULL_WIDTH > B_WIDTH ? Y_FULL_WIDTH : B_WIDTH) + 1;
 
-    // ROM å­˜å‚¨ç»“æž„ï¼šæ‹¼æŽ¥ k å’Œ b
+    // ROM ´æ´¢½á¹¹£ºÆ´?? k ?? b
     reg [K_WIDTH + B_WIDTH - 1:0] rom [0:(1<<U)-1];
 
     initial begin
-        $readmemh("pwl_func.mem", rom);  // ä¸Ž Python è¾“å‡ºçš„ .mem å¯¹åº”
+        $readmemh("pwl_func.mem", rom);  // Óë Python Êä³öµÄ .mem ¶ÔÓ¦
     end
 
-    // æ‹†åˆ†è¾“å…¥ï¼šå‰ U ä½ç”¨äºŽæŸ¥è¡¨ï¼ŒåŽ V ä½ç”¨äºŽä¹˜æ³•
-    wire [U-1:0] idx  = x_in[M+N-1:M+N-U]; // é«˜ U ä½
-    wire [V-1:0] frac = x_in[V-1:0];       // ä½Ž V ä½
+    // ²ð·ÖÊäÈë£ºÇ° U Î»ÓÃÓÚ²é±í£¬ºó V Î»ÓÃÓÚ³Ë·¨
+    wire [U-1:0] idx  = x_in[M+N-1:M+N-U]; // ¸ß U Î»
+    wire [V-1:0] frac = x_in[V-1:0];       // µÍ V Î»
 
-    // å¯„å­˜å™¨ä¸­é—´å€¼
+    // ¼Ä´æÆ÷ÖÐ¼äÖµ
     reg signed [K_WIDTH-1:0] k;
     reg signed [B_WIDTH-1:0] b;
     reg signed [K_WIDTH+V-1:0] k_frac;
@@ -41,8 +41,8 @@ module pwl #(
         k_frac <= k * frac;                        // k * frac (Qk * Qv)
         y_full <= (k_frac >>> V) + b;              // (k * frac) >> V + b
 
-        // y_full çš„å°æ•°ä½æ˜¯ B_WIDTH_Fï¼Œä¸Žç›®æ ‡ N ä½å¯¹é½
-        // è‹¥ B_WIDTH_F > Nï¼Œå³ç§»æˆªå–ï¼›è‹¥ B_WIDTH_F < Nï¼Œå·¦ç§»è¡¥é›¶
+        // y_full µÄÐ¡ÊýÎ»ÊÇ B_WIDTH_F£¬ÓëÄ¿±ê N Î»¶ÔÆë
+        // Èô B_WIDTH_F > N£¬ÓÒÒÆ½ØÈ¡£»Èô B_WIDTH_F < N£¬×óÒÆ²¹Áã
         if (B_WIDTH_F > N)
             y_temp <= y_full >>> (B_WIDTH_F - N);
         else

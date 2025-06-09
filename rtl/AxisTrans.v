@@ -1,12 +1,12 @@
 module AxisTrans #(//include the adder
-    parameter M = 4,                     // è¾“å…¥æ•´æ•°ä½ï¼Œæœ€é«˜ä½ä¸ºç¬¦å·ä½
-    parameter N = 8,                      // è¾“å…¥å°æ•°ä½
-    parameter FUNC_TYPE = 0             // 0/1ï¼Œé€‰æ‹©åŠŸèƒ½ç±»å‹(-,+)
+    parameter M = 4,                     // ÊäÈëÕûÊıÎ»£¬×î¸ßÎ»Îª·ûºÅÎ»
+    parameter N = 8,                      // ÊäÈëĞ¡ÊıÎ»
+    parameter FUNC_TYPE = 0             // 0/1£¬Ñ¡Ôñ¹¦ÄÜÀàĞÍ(-,+)
 )(
     input wire clk,
-    input wire signed [M+N-1:0] f_in,    // è¾“å…¥å®šç‚¹æ•°ï¼ˆsignedï¼‰
-    input wire signed [M+N-1:0] s_in,                  // è¾“å‡ºç¬¦å·ä½
-    output reg signed [M+N-1:0] f_out    // è¾“å‡ºå®šç‚¹æ•°çš„ç»å¯¹å€¼
+    input wire signed [M+N-1:0] f_in,    // ÊäÈë¶¨µãÊı£¨signed£©
+    input wire signed [M+N-1:0] s_in,                  // Êä³ö·ûºÅÎ»
+    output reg signed [M+N-1:0] f_out    // Êä³ö¶¨µãÊıµÄ¾ø¶ÔÖµ
 );
 
 always @(posedge clk) begin
