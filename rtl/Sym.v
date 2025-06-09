@@ -13,8 +13,7 @@ always @(posedge clk) begin
     case (FUNC_TYPE)
         0: s_out <= 0;
         1: s_out <= (sign == 0) ? 0 : (1 << N);
-        2: s_out <= (sign == 0) ? 0 : x_in;
-        default: s_out <= 0;
+        default: s_out <= (sign == 0) ? 0 : x_in;
     endcase
 end
 
