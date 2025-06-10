@@ -1,6 +1,6 @@
 module top #(//include the adder
-    parameter M = 4,                     // 输入整数位，最高位为符号位
-    parameter N = 8,                      // 输入小数
+    parameter M = 2,                     // 输入整数位，最高位为符号位
+    parameter N = 10,                      // 输入小数
     parameter FUNC_TYPE = 4             // 选择函数类型(Sigmoid,Tanh,Swish,GELU,Softplos)
 )(
     input wire clk,

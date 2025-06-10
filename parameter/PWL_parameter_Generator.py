@@ -31,7 +31,7 @@ def generate_pwl_constants(m: int, n: int, u: int, v: int, func=gelu, output_fil
     if output_file is None:
         func_name = func.__name__ if hasattr(func, '__name__') else 'custom'
         param_str = f"inputi{m}_inputf{n}_findLUT{u}_LinearCalc{v}_ki{k_int_bits}kf{k_frac_bits}bi{b_int_bits}bf{b_frac_bits}"
-        output_file = f"pwl_{func_name}_{param_str}.txt"
+        output_file = f"parameter\\pwl_{func_name}_{param_str}.txt"
 
     hex_file = output_file.replace(".txt", ".hex")
     mem_file = output_file.replace(".txt", ".mem")
@@ -84,4 +84,4 @@ def generate_pwl_constants(m: int, n: int, u: int, v: int, func=gelu, output_fil
 
 if __name__ == "__main__":
     # 示例：4位整数，4位小数，绘图开启，输出为定点格式 + hex格式 + mem格式
-    generate_pwl_constants(m=4, n=8, u=8, v=4, func=sin, plot=True, k_int_bits=4, k_frac_bits=12, b_int_bits=4, b_frac_bits=12)
+    generate_pwl_constants(m=2, n=10, u=8, v=4, func=gelu, plot=True, k_int_bits=4, k_frac_bits=12, b_int_bits=4, b_frac_bits=12)

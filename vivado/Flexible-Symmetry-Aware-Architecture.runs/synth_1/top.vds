@@ -1,0 +1,267 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Mon Jun  9 20:38:33 2025
+# Process ID: 35892
+# Current directory: D:/Desktop/Vivado/work/Flexible-Symmetry-Aware-Architecture/vivado/Flexible-Symmetry-Aware-Architecture.runs/synth_1
+# Command line: vivado.exe -log top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
+# Log file: D:/Desktop/Vivado/work/Flexible-Symmetry-Aware-Architecture/vivado/Flexible-Symmetry-Aware-Architecture.runs/synth_1/top.vds
+# Journal file: D:/Desktop/Vivado/work/Flexible-Symmetry-Aware-Architecture/vivado/Flexible-Symmetry-Aware-Architecture.runs/synth_1\vivado.jou
+# Running On: SaberBook, OS: Windows, CPU Frequency: 3992 MHz, CPU Physical cores: 16, Host memory: 33515 MB
+#-----------------------------------------------------------
+source top.tcl -notrace
+create_project: Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 486.605 ; gain = 180.203
+Command: read_checkpoint -auto_incremental -incremental D:/Desktop/Vivado/work/Flexible-Symmetry-Aware-Architecture/vivado/Flexible-Symmetry-Aware-Architecture.srcs/utils_1/imports/synth_1/top.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from D:/Desktop/Vivado/work/Flexible-Symmetry-Aware-Architecture/vivado/Flexible-Symmetry-Aware-Architecture.srcs/utils_1/imports/synth_1/top.dcp for incremental synthesis
+INFO: [Vivado 12-7989] Please ensure there are no constraint changes
+Command: synth_design -top top -part xc7a35tfgg484-3
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 26900
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 935.184 ; gain = 438.613
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'top' [D:/Desktop/Vivado/work/Flexible-Symmetry-Aware-Architecture/rtl/top.v:1]
+INFO: [Synth 8-6157] synthesizing module 'Pre' [D:/Desktop/Vivado/work/Flexible-Symmetry-Aware-Architecture/rtl/Pre.v:1]
+	Parameter M bound to: 2 - type: integer 
+	Parameter N bound to: 10 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'Pre' (0#1) [D:/Desktop/Vivado/work/Flexible-Symmetry-Aware-Architecture/rtl/Pre.v:1]
+INFO: [Synth 8-6157] synthesizing module 'Sym' [D:/Desktop/Vivado/work/Flexible-Symmetry-Aware-Architecture/rtl/Sym.v:1]
+	Parameter M bound to: 2 - type: integer 
+	Parameter N bound to: 10 - type: integer 
+	Parameter FUNC_TYPE bound to: 4 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'Sym' (0#1) [D:/Desktop/Vivado/work/Flexible-Symmetry-Aware-Architecture/rtl/Sym.v:1]
+INFO: [Synth 8-6157] synthesizing module 'PWL' [D:/Desktop/Vivado/work/Flexible-Symmetry-Aware-Architecture/rtl/PWL.v:1]
+	Parameter M bound to: 2 - type: integer 
+	Parameter N bound to: 10 - type: integer 
+	Parameter U bound to: 8 - type: integer 
+	Parameter V bound to: 4 - type: integer 
+	Parameter K_WIDTH_I bound to: 4 - type: integer 
+	Parameter K_WIDTH_F bound to: 12 - type: integer 
+	Parameter B_WIDTH_I bound to: 4 - type: integer 
+	Parameter B_WIDTH_F bound to: 12 - type: integer 
+INFO: [Synth 8-3876] $readmem data file 'D:\Desktop\Vivado\work\Flexible-Symmetry-Aware-Architecture\parameter\pwl_gelu_inputi0_inputf12_findLUT8_LinearCalc4_ki4kf12bi4bf12.mem' is read successfully [D:/Desktop/Vivado/work/Flexible-Symmetry-Aware-Architecture/rtl/PWL.v:25]
+INFO: [Synth 8-6155] done synthesizing module 'PWL' (0#1) [D:/Desktop/Vivado/work/Flexible-Symmetry-Aware-Architecture/rtl/PWL.v:1]
+INFO: [Synth 8-6157] synthesizing module 'AxisTrans' [D:/Desktop/Vivado/work/Flexible-Symmetry-Aware-Architecture/rtl/AxisTrans.v:1]
+	Parameter M bound to: 2 - type: integer 
+	Parameter N bound to: 10 - type: integer 
+	Parameter FUNC_TYPE bound to: 4 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'AxisTrans' (0#1) [D:/Desktop/Vivado/work/Flexible-Symmetry-Aware-Architecture/rtl/AxisTrans.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'top' (0#1) [D:/Desktop/Vivado/work/Flexible-Symmetry-Aware-Architecture/rtl/top.v:1]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1042.242 ; gain = 545.672
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1042.242 ; gain = 545.672
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tfgg484-3
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1042.242 ; gain = 545.672
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a35tfgg484-3
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1042.242 ; gain = 545.672
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   22 Bit       Adders := 1     
+	   2 Input   12 Bit       Adders := 2     
++---Registers : 
+	               32 Bit    Registers := 1     
+	               22 Bit    Registers := 1     
+	               16 Bit    Registers := 1     
+	               12 Bit    Registers := 5     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	 257 Input   32 Bit        Muxes := 1     
+	   2 Input   12 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+WARNING: [Synth 8-3936] Found unconnected internal register 'y_full_reg' and it is trimmed from '22' to '14' bits. [D:/Desktop/Vivado/work/Flexible-Symmetry-Aware-Architecture/rtl/PWL.v:42]
+WARNING: [Synth 8-3936] Found unconnected internal register 'b0_reg' and it is trimmed from '32' to '14' bits. [D:/Desktop/Vivado/work/Flexible-Symmetry-Aware-Architecture/rtl/PWL.v:40]
+DSP Report: Generating DSP k_frac_reg, operation Mode is: (A2*B)'.
+DSP Report: register k_frac_reg is absorbed into DSP k_frac_reg.
+DSP Report: register k_frac_reg is absorbed into DSP k_frac_reg.
+DSP Report: operator k_frac0 is absorbed into DSP k_frac_reg.
+WARNING: [Synth 8-3332] Sequential element (pwl_inst/b0_reg[12]) is unused and will be removed from module top.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 1228.914 ; gain = 732.344
+---------------------------------------------------------------------------------
+ Sort Area is  k_frac_reg_0 : 0 0 : 509 509 : Used 1 time 0
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding REG is set)
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|PWL         | (A2*B)'     | 16     | 5      | -      | -      | 21     | 1    | 0    | -    | -    | -     | 1    | 0    | 
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 1228.914 ; gain = 732.344
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 1236.426 ; gain = 739.855
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:21 ; elapsed = 00:00:24 . Memory (MB): peak = 1236.426 ; gain = 739.855
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:21 ; elapsed = 00:00:24 . Memory (MB): peak = 1236.426 ; gain = 739.855
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:21 ; elapsed = 00:00:24 . Memory (MB): peak = 1236.426 ; gain = 739.855
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:21 ; elapsed = 00:00:24 . Memory (MB): peak = 1236.426 ; gain = 739.855
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:21 ; elapsed = 00:00:24 . Memory (MB): peak = 1236.426 ; gain = 739.855
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:21 ; elapsed = 00:00:24 . Memory (MB): peak = 1236.426 ; gain = 739.855
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+DSP Final Report (the ' indicates corresponding REG is set)
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|PWL         | (A'*B')'    | 5      | 4      | -      | -      | 20     | 1    | 1    | -    | -    | -     | 0    | 1    | 
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+--------+------+
+|      |Cell    |Count |
++------+--------+------+
+|1     |BUFG    |     1|
+|2     |CARRY4  |    10|
+|3     |DSP48E1 |     1|
+|4     |LUT1    |    13|
+|5     |LUT2    |    27|
+|6     |LUT3    |    12|
+|7     |LUT5    |     2|
+|8     |LUT6    |    49|
+|9     |MUXF7   |    21|
+|10    |MUXF8   |    10|
+|11    |FDRE    |    81|
+|12    |IBUF    |    13|
+|13    |OBUF    |    12|
++------+--------+------+
+
+Report Instance Areas: 
++------+-----------+----------+------+
+|      |Instance   |Module    |Cells |
++------+-----------+----------+------+
+|1     |top        |          |   252|
+|2     |  at_inst  |AxisTrans |    27|
+|3     |  pre_inst |Pre       |   122|
+|4     |  pwl_inst |PWL       |    65|
+|5     |  sym_inst |Sym       |    12|
++------+-----------+----------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:21 ; elapsed = 00:00:24 . Memory (MB): peak = 1236.426 ; gain = 739.855
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 4 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:21 ; elapsed = 00:00:24 . Memory (MB): peak = 1236.426 ; gain = 739.855
+Synthesis Optimization Complete : Time (s): cpu = 00:00:21 ; elapsed = 00:00:24 . Memory (MB): peak = 1236.426 ; gain = 739.855
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1239.250 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 42 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1338.547 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete | Checksum: f240fd6c
+INFO: [Common 17-83] Releasing license: Synthesis
+27 Infos, 4 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:23 ; elapsed = 00:00:26 . Memory (MB): peak = 1338.547 ; gain = 848.953
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1338.547 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'D:/Desktop/Vivado/work/Flexible-Symmetry-Aware-Architecture/vivado/Flexible-Symmetry-Aware-Architecture.runs/synth_1/top.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Mon Jun  9 20:39:10 2025...

@@ -1,0 +1,14 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../../rtl/AxisTrans.v" \
+"../../../../../rtl/PWL.v" \
+"../../../../../rtl/Pre.v" \
+"../../../../../rtl/Sym.v" \
+"../../../../../rtl/top.v" \
+"../../../../../tb/tb_top.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

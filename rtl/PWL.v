@@ -1,6 +1,6 @@
 module PWL #(
-    parameter M = 4,                     // 输入整数位
-    parameter N = 8,                     // 输入小数位
+    parameter M = 2,                     // 输入整数位
+    parameter N = 10,                     // 输入小数位
     parameter U = 8,                     // 查表索引位宽（使用输入高 U 位）
     parameter V = 4,                     // 分段内小数参与位宽（使用输入低 V 位）
     parameter K_WIDTH_I = 4,             // k 整数位宽
@@ -18,16 +18,16 @@ module PWL #(
     localparam Y_FULL_WIDTH = K_WIDTH + V + 1; // k_frac 临时结果位宽，+1 防溢出
     localparam Y_TOTAL_WIDTH = (Y_FULL_WIDTH > B_WIDTH ? Y_FULL_WIDTH : B_WIDTH) + 1;
 
-    // ROM 存储结构：拼?? k ?? b
+    // ROM 存储结构：k前b后
     reg [K_WIDTH + B_WIDTH - 1:0] rom [0:(1<<U)-1];
 
     initial begin
-        $readmemh("pwl_func.mem", rom);  // 与 Python 输出的 .mem 对应
+        $readmemh("D:\\Desktop\\Vivado\\work\\Flexible-Symmetry-Aware-Architecture\\parameter\\pwl_gelu_inputi0_inputf12_findLUT8_LinearCalc4_ki4kf12bi4bf12.mem", rom);  // 与 Python 输出的 .mem 对应
     end
 
     // 拆分输入：前 U 位用于查表，后 V 位用于乘法
     wire [U-1:0] idx  = x_in[M+N-1:M+N-U]; // 高 U 位
-    wire [V-1:0] frac = x_in[V-1:0];       // 低 V 位
+    wire signed [V:0] frac = {1'b0,x_in[V-1:0]};       // 低 V 位
 
     // 寄存器中间值
     reg signed [K_WIDTH-1:0] k;
@@ -49,6 +49,7 @@ module PWL #(
             y_temp <= y_full <<< (N - B_WIDTH_F);
 
         y_out <= y_temp;
+
     end
 
 endmodule

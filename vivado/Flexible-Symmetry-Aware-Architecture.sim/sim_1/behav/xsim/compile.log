@@ -1,0 +1,4 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/Vivado/work/Flexible-Symmetry-Aware-Architecture/rtl/top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Desktop/Vivado/work/Flexible-Symmetry-Aware-Architecture/tb/tb_top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top_tb

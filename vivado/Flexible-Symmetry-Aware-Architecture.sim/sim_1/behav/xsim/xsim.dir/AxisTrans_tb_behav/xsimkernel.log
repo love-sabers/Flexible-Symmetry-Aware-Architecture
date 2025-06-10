@@ -1,0 +1,7 @@
+Running: xsim.dir/AxisTrans_tb_behav/xsimk.exe -simmode gui -wdb AxisTrans_tb_behav.wdb -simrunnum 0 -socket 5010
+Design successfully loaded
+Design Loading Memory Usage: 11168 KB (Peak: 11168 KB)
+Design Loading CPU Usage: 15 ms
+Simulation completed
+Simulation Memory Usage: 11824 KB (Peak: 11824 KB)
+Simulation CPU Usage: 15 ms

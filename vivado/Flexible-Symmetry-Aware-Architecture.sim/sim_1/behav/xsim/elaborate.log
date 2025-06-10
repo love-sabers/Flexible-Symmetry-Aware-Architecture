@@ -1,0 +1,29 @@
+Vivado Simulator v2023.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2023.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot top_tb_behav xil_defaultlib.top_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "D:/Desktop/Vivado/work/Flexible-Symmetry-Aware-Architecture/rtl/top.v" Line 1. Module top doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Desktop/Vivado/work/Flexible-Symmetry-Aware-Architecture/rtl/Pre.v" Line 1. Module Pre(M=2,N=10) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Desktop/Vivado/work/Flexible-Symmetry-Aware-Architecture/rtl/Sym.v" Line 1. Module Sym(M=2,N=10,FUNC_TYPE=4) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Desktop/Vivado/work/Flexible-Symmetry-Aware-Architecture/rtl/PWL.v" Line 1. Module PWL_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Desktop/Vivado/work/Flexible-Symmetry-Aware-Architecture/rtl/AxisTrans.v" Line 1. Module AxisTrans(M=2,N=10,FUNC_TYPE=4) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Desktop/Vivado/work/Flexible-Symmetry-Aware-Architecture/rtl/top.v" Line 1. Module top doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Desktop/Vivado/work/Flexible-Symmetry-Aware-Architecture/rtl/Pre.v" Line 1. Module Pre(M=2,N=10) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Desktop/Vivado/work/Flexible-Symmetry-Aware-Architecture/rtl/Sym.v" Line 1. Module Sym(M=2,N=10,FUNC_TYPE=4) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Desktop/Vivado/work/Flexible-Symmetry-Aware-Architecture/rtl/PWL.v" Line 1. Module PWL_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Desktop/Vivado/work/Flexible-Symmetry-Aware-Architecture/rtl/AxisTrans.v" Line 1. Module AxisTrans(M=2,N=10,FUNC_TYPE=4) doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.Pre(M=2,N=10)
+Compiling module xil_defaultlib.Sym(M=2,N=10,FUNC_TYPE=4)
+Compiling module xil_defaultlib.PWL_default
+Compiling module xil_defaultlib.AxisTrans(M=2,N=10,FUNC_TYPE=4)
+Compiling module xil_defaultlib.top
+Compiling module xil_defaultlib.top_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot top_tb_behav
